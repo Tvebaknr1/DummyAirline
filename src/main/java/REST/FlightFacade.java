@@ -41,9 +41,7 @@ public class FlightFacade
         try
         {
             em.getTransaction().begin();
-            //flight = em.createQuery("SELECT f FROM Flight f").getResultList();
-            //em.find(Flight.class, 1);
-            flight = em.createNamedQuery("Flight.findAll").getResultList();
+            flight = em.createQuery("SELECT f FROM Flight f").getResultList();
             em.getTransaction().commit();
             System.out.println(flight);
             return flight;
