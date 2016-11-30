@@ -17,14 +17,88 @@ insert into `AIRPORT` (`IATACode`,`timeZone`,`name`,`country`,`city`) values("BC
 insert into `AIRPORT` (`IATACode`,`timeZone`,`name`,`country`,`city`) values("TestCode3", "UCT","TestPort","TestCountry","TestCity");
 
 insert into `FLIGHT` (`Airline`, `fromAirport`, `tooAirport`, `flightNumber`, `seats`,`flightTimeAirline`) values (1, 1,2,"newy001", 200, 5);
-insert into `FLIGHT` (`Airline`, `fromAirport`, `tooAirport`, `flightNumber`, `seats`,`flightTimeAirline`) values (2, 1,2,"newy031", 200, 5);
-insert into `FLIGHT` (`Airline`, `fromAirport`, `tooAirport`, `flightNumber`, `seats`,`flightTimeAirline`) values (3, 3,2,"newy051", 200, 5);
+insert into `FLIGHT` (`Airline`, `fromAirport`, `tooAirport`, `flightNumber`, `seats`,`flightTimeAirline`) values (1, 1,2,"newy031", 200, 5);
+insert into `FLIGHT` (`Airline`, `fromAirport`, `tooAirport`, `flightNumber`, `seats`,`flightTimeAirline`) values (1, 3,2,"newy051", 200, 5);
 
 insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(1,STR_TO_DATE('28-01-2012', '%d-%m-%Y'),234,23);
 
 insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(1,STR_TO_DATE('1-01-2017', '%d-%m-%Y'),1000,25);
 insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(2,STR_TO_DATE('1-01-2017', '%d-%m-%Y'),1000,25);
 insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(3,STR_TO_DATE('1-01-2017', '%d-%m-%Y'),1000,25);
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(1,STR_TO_DATE('2-01-2017', '%d-%m-%Y'),1000,25);
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(2,STR_TO_DATE('2-01-2017', '%d-%m-%Y'),1000,25);
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(3,STR_TO_DATE('2-01-2017', '%d-%m-%Y'),1000,25);
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(1,STR_TO_DATE('3-01-2017', '%d-%m-%Y'),1000,25);
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(2,STR_TO_DATE('3-01-2017', '%d-%m-%Y'),1000,25);
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(3,STR_TO_DATE('3-01-2017', '%d-%m-%Y'),1000,25);
+
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(1,STR_TO_DATE('4-01-2017', '%d-%m-%Y'),1000,25);
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(2,STR_TO_DATE('4-01-2017', '%d-%m-%Y'),1000,25);
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(3,STR_TO_DATE('4-01-2017', '%d-%m-%Y'),1000,25);
+
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(1,STR_TO_DATE('5-01-2017', '%d-%m-%Y'),1000,25);
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(2,STR_TO_DATE('5-01-2017', '%d-%m-%Y'),1000,25);
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(3,STR_TO_DATE('5-01-2017', '%d-%m-%Y'),1000,25);
+
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(1,STR_TO_DATE('6-01-2017', '%d-%m-%Y'),1000,25);
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(2,STR_TO_DATE('6-01-2017', '%d-%m-%Y'),1000,25);
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(3,STR_TO_DATE('6-01-2017', '%d-%m-%Y'),1000,25);
+
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(1,STR_TO_DATE('7-01-2017', '%d-%m-%Y'),1000,25);
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(2,STR_TO_DATE('7-01-2017', '%d-%m-%Y'),1000,25);
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(3,STR_TO_DATE('7-01-2017', '%d-%m-%Y'),1000,25);
+
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(1,STR_TO_DATE('8-01-2017', '%d-%m-%Y'),1000,25);
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(2,STR_TO_DATE('8-01-2017', '%d-%m-%Y'),1000,25);
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(3,STR_TO_DATE('8-01-2017', '%d-%m-%Y'),1000,25);
+
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(1,STR_TO_DATE('9-01-2017', '%d-%m-%Y'),1000,25);
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(2,STR_TO_DATE('9-01-2017', '%d-%m-%Y'),1000,25);
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(3,STR_TO_DATE('9-01-2017', '%d-%m-%Y'),1000,25);
+
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(1,STR_TO_DATE('10-01-2017', '%d-%m-%Y'),1000,25);
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(2,STR_TO_DATE('10-01-2017', '%d-%m-%Y'),1000,25);
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(3,STR_TO_DATE('10-01-2017', '%d-%m-%Y'),1000,25);
+
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(1,STR_TO_DATE('11-01-2017', '%d-%m-%Y'),1000,25);
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(2,STR_TO_DATE('11-01-2017', '%d-%m-%Y'),1000,25);
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(3,STR_TO_DATE('11-01-2017', '%d-%m-%Y'),1000,25);
+
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(1,STR_TO_DATE('12-01-2017', '%d-%m-%Y'),1000,25);
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(2,STR_TO_DATE('12-01-2017', '%d-%m-%Y'),1000,25);
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(3,STR_TO_DATE('12-01-2017', '%d-%m-%Y'),1000,25);
+
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(1,STR_TO_DATE('13-01-2017', '%d-%m-%Y'),1000,25);
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(2,STR_TO_DATE('13-01-2017', '%d-%m-%Y'),1000,25);
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(3,STR_TO_DATE('13-01-2017', '%d-%m-%Y'),1000,25);
+
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(1,STR_TO_DATE('14-01-2017', '%d-%m-%Y'),1000,25);
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(2,STR_TO_DATE('14-01-2017', '%d-%m-%Y'),1000,25);
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(3,STR_TO_DATE('14-01-2017', '%d-%m-%Y'),1000,25);
+
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(1,STR_TO_DATE('15-01-2017', '%d-%m-%Y'),1000,25);
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(2,STR_TO_DATE('15-01-2017', '%d-%m-%Y'),1000,25);
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(3,STR_TO_DATE('15-01-2017', '%d-%m-%Y'),1000,25);
+
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(1,STR_TO_DATE('16-01-2017', '%d-%m-%Y'),1000,25);
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(2,STR_TO_DATE('16-01-2017', '%d-%m-%Y'),1000,25);
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(3,STR_TO_DATE('16-01-2017', '%d-%m-%Y'),1000,25);
+
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(1,STR_TO_DATE('17-01-2017', '%d-%m-%Y'),1000,25);
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(2,STR_TO_DATE('17-01-2017', '%d-%m-%Y'),1000,25);
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(3,STR_TO_DATE('17-01-2017', '%d-%m-%Y'),1000,25);
+
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(1,STR_TO_DATE('18-01-2017', '%d-%m-%Y'),1000,25);
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(2,STR_TO_DATE('18-01-2017', '%d-%m-%Y'),1000,25);
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(3,STR_TO_DATE('18-01-2017', '%d-%m-%Y'),1000,25);
+
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(1,STR_TO_DATE('19-01-2017', '%d-%m-%Y'),1000,25);
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(2,STR_TO_DATE('19-01-2017', '%d-%m-%Y'),1000,25);
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(3,STR_TO_DATE('19-01-2017', '%d-%m-%Y'),1000,25);
+
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(1,STR_TO_DATE('2-01-2017', '%d-%m-%Y'),1000,25);
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(2,STR_TO_DATE('2-01-2017', '%d-%m-%Y'),1000,25);
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(3,STR_TO_DATE('2-01-2017', '%d-%m-%Y'),1000,25);
 
 
 insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(2,STR_TO_DATE('7-01-2016', '%d-%m-%Y'),4567,34);
