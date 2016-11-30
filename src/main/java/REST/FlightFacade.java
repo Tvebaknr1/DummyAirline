@@ -66,49 +66,11 @@ public class FlightFacade {
         List<FlightInstance> AllFlights = this.getAllFlightInstances();
         List<FlightInstance> SortedFlights = new ArrayList<>();
         for (FlightInstance AllFlight : AllFlights) {
-            if(AllFlight.getDateAndTime().equals(date)&&AllFlight.getFlight().getfromAirport().getIATACode().equals(from)&&AllFlight.getavailableSeats()>=tickets)
+            if(AllFlight.getDateAndTime().after(date)&&AllFlight.getFlight().getfromAirport().getIATACode().equals(from)&&AllFlight.getavailableSeats()>=tickets)
             {
                 SortedFlights.add(AllFlight);
             }
         }
         return SortedFlights;
     }
-
-//    public List<Flight> getFlightsWithFromDateTickets(String from, Date date, int tickets)
-//    {
-//        
-//        EntityManager em = emf.createEntityManager();
-//
-//        List<Flight> flight = null;
-//        
-//        try
-//        {
-//            em.getTransaction().begin();
-//            flight = em.createQuery("SELECT f FROM Flight f JOIN Airport i WHERE f.fromAirport = " + from 
-//                    + " AND i. = " + date + " AND f.seats = " + tickets).getResultList();
-//            
-//            Query q = em.createNativeQuery("SELECT AIRPORT.IATACode, FLIGHT.seats, FLIGHTINSTANCE.dateAndTime FROM FLIGHT natural join AIRPORT NATURAL JOIN FLIGHTINSTANCE");
-//            
-//            while(q.getResultList().isEmpty()){
-//                flight.add(new Flight)
-//            }
-//            
-//            em.getTransaction().commit();
-//            System.out.println(flight);
-//            return flight;
-//        } finally
-//        {
-//            em.close();
-//        }
-//    }
-
-//    public List<Flight> getFlightsWithFromToDateTickets(String to, String From, Date date, int tickets)
-//    {
-//
-//    }
-//
-//    public Reservation postReservationWithFlightIdPassengers(List<Passenger> passenger, int flightId)
-//    {
-//
-//    }
 }
