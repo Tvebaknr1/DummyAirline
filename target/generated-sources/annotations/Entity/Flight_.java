@@ -8,7 +8,7 @@ import javax.persistence.metamodel.CollectionAttribute;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2016-11-30T12:12:15")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2016-11-30T12:53:28")
 @StaticMetamodel(Flight.class)
 public class Flight_ { 
 

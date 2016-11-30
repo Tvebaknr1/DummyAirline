@@ -9,14 +9,14 @@ package RESTException;
  *
  * @author LouiseB
  */
-public class PersonNotFoundException extends Exception
+public class FlightException extends Exception
 {
 
-    public PersonNotFoundException()
+    public FlightException()
     {
     }
 
-    public PersonNotFoundException(String msg)
+    public FlightException(String msg)
     {
         super(msg);
     }
