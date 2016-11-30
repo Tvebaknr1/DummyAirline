@@ -32,7 +32,7 @@ public class FlightInstance implements Serializable
     private int flightInstanceID;
     
     @Column(name = "dateAndTime")
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date dateAndTime;
     
     @Column(name = "availableSeats")
