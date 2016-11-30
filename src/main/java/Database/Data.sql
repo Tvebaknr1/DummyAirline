@@ -4,8 +4,16 @@ insert into `AIRLINE` (`name`) values("TestLine1");
 insert into `AIRLINE` (`name`) values("TestLine2");
 insert into `AIRLINE` (`name`) values("TestLine3");
 
-insert into `AIRPORT` (`IATACode`,`timeZone`,`name`,`country`,`city`) values("TestCode1", "CET","Copenhagen Airport","Denmark","Copenhagen");
-insert into `AIRPORT` (`IATACode`,`timeZone`,`name`,`country`,`city`) values("TestCode2", "EST","john f kennedy international airport","USA","New York");
+insert into `AIRPORT` (`IATACode`,`timeZone`,`name`,`country`,`city`) values("CPH", "CET","Copenhagen Airport","Denmark","Copenhagen");
+insert into `AIRPORT` (`IATACode`,`timeZone`,`name`,`country`,`city`) values("JFK", "EST","john f kennedy international airport","USA","New York");
+insert into `AIRPORT` (`IATACode`,`timeZone`,`name`,`country`,`city`) values("SXF", "CET","schonefield airport","Germany","Berlin");
+insert into `AIRPORT` (`IATACode`,`timeZone`,`name`,`country`,`city`) values("STN", "WET","Stansted Airport","England","London");
+insert into `AIRPORT` (`IATACode`,`timeZone`,`name`,`country`,`city`) values("CDG", "CET","Parisa Airport","France","Paris");
+insert into `AIRPORT` (`IATACode`,`timeZone`,`name`,`country`,`city`) values("BCN", "CET","Barcelona Airport","spain","Barcelona");
+
+
+
+
 insert into `AIRPORT` (`IATACode`,`timeZone`,`name`,`country`,`city`) values("TestCode3", "UCT","TestPort","TestCountry","TestCity");
 
 insert into `FLIGHT` (`Airline`, `fromAirport`, `tooAirport`, `flightNumber`, `seats`,`flightTimeAirline`) values (1, 1,2,"newy001", 200, 5);
@@ -13,6 +21,12 @@ insert into `FLIGHT` (`Airline`, `fromAirport`, `tooAirport`, `flightNumber`, `s
 insert into `FLIGHT` (`Airline`, `fromAirport`, `tooAirport`, `flightNumber`, `seats`,`flightTimeAirline`) values (3, 3,2,"newy051", 200, 5);
 
 insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(1,STR_TO_DATE('28-01-2012', '%d-%m-%Y'),234,23);
+
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(1,STR_TO_DATE('1-01-2017', '%d-%m-%Y'),1000,25);
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(2,STR_TO_DATE('1-01-2017', '%d-%m-%Y'),1000,25);
+insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(3,STR_TO_DATE('1-01-2017', '%d-%m-%Y'),1000,25);
+
+
 insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(2,STR_TO_DATE('7-01-2016', '%d-%m-%Y'),4567,34);
 insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(3,STR_TO_DATE('17-02-2016', '%d-%m-%Y'),23,23);
 insert into `FLIGHTINSTANCE` ( `flight`,`dateAndTime`,`availableSeats` ,`price`) values(1,STR_TO_DATE('1-03-2016', '%d-%m-%Y'),78,5);
