@@ -9,41 +9,37 @@ import Entity.Flight;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 /**
  *
  * @author LouiseB
  */
-public class FlightFacade
-{
+public class FlightFacade {
 
     EntityManagerFactory emf;
 
-    public FlightFacade()
-    {
+    public FlightFacade() {
+        this.emf = Persistence.createEntityManagerFactory("Airline");
     }
 
-    public FlightFacade(EntityManagerFactory emf)
-    {
+    public FlightFacade(EntityManagerFactory emf) {
         this.emf = emf;
     }
 
-    public List<Flight> getAllFlights()
-    {
+    public List<Flight> getAllFlights() {
 
         EntityManager em = emf.createEntityManager();
 
         List<Flight> flight = null;
 
-        try
-        {
+        try {
             em.getTransaction().begin();
             flight = em.createQuery("SELECT f FROM Flight f").getResultList();
             em.getTransaction().commit();
             System.out.println(flight);
             return flight;
-        } finally
-        {
+        } finally {
             em.close();
         }
     }
