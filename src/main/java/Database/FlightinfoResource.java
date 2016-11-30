@@ -22,21 +22,31 @@ import javax.ws.rs.core.UriInfo;
  * @author Emil
  */
 @Path("flightinfo")
-public class FlightinfoResource {
+public class FlightinfoResource
+{
 
     FlightFacade flightFacade = new FlightFacade();
 
     @Context
     private UriInfo context;
 
-    public FlightinfoResource() {
+    public FlightinfoResource()
+    {
     }
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public String getFlightsWithFromDateTickets()
+    public String getAllFlights()
     {
         List<Flight> flights = flightFacade.getAllFlights();
         return new Gson().toJson(flights);
     }
+
+//    @GET
+//    @Produces(MediaType.APPLICATION_JSON)
+//    public String getFlightsWithFromDateTickets()
+//    {
+//        List<Flight> flights = flightFacade.getFlightsWithFromDateTickets(from, date, 0);
+//        return new Gson().toJson(flights);
+//    }
 }
