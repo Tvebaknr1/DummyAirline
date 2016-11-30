@@ -49,9 +49,9 @@ public class FlightinfoResource
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.TEXT_PLAIN)
-    public String getFlightsWithFromDateTickets(@PathParam("from")String from, @PathParam("date") Date date, @PathParam("tickets")String tickets)
+    public String getFlightsWithFromDateTickets(@PathParam("from")String from, @PathParam("date") Date date, @PathParam("tickets")int tickets)
     {
-        List<FlightInstance> flights = flightFacade.getFlightsWithFromDateTickets(from, date, 0);
+        List<FlightInstance> flights = flightFacade.getFlightsWithFromDateTickets(from, date, tickets);
         return new Gson().toJson(flights);
     }
 }
