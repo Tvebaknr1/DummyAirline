@@ -6,77 +6,71 @@ package REST;
  * and open the template in the editor.
  */
 import Entity.Flight;
-import java.util.Date;
+import Entity.FlightInstance;
+import java.sql.Date;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 /**
  *
  * @author LouiseB
  */
-public class FlightFacade
-{
+public class FlightFacade {
 
     EntityManagerFactory emf;
 
-    public FlightFacade()
-    {
+    public FlightFacade() {
+        this.emf = Persistence.createEntityManagerFactory("Airline");
     }
 
-    public FlightFacade(EntityManagerFactory emf)
-    {
+    public FlightFacade(EntityManagerFactory emf) {
         this.emf = emf;
     }
 
-    public List<Flight> getAllFlights()
-    {
+    public List<Flight> getAllFlights() {
 
         EntityManager em = emf.createEntityManager();
 
         List<Flight> flight = null;
 
-        try
-        {
+        try {
             em.getTransaction().begin();
             flight = em.createQuery("SELECT f FROM Flight f").getResultList();
             em.getTransaction().commit();
             System.out.println(flight);
             return flight;
-        } finally
-        {
+        } finally {
             em.close();
         }
     }
+    public List<FlightInstance> getAllFlightInstances() {
 
-    public List<Flight> getFlightsWithFromDateTickets(String from, Date date, int tickets)
-    {
-        
         EntityManager em = emf.createEntityManager();
 
-        List<Flight> flight = null;
-        
-        try
-        {
+        List<FlightInstance> flight = null;
+
+        try {
             em.getTransaction().begin();
-            flight = em.createQuery("SELECT f FROM Flight f NATURAL JOIN f.FlightInstance i WHERE f.fromAirport = " + from 
-                    + " AND i.dateAndTime = " + date + " AND f.seats = " + tickets).getResultList();
+            flight = em.createQuery("SELECT f FROM FlightInstance f").getResultList();
             em.getTransaction().commit();
-            System.out.println(flight);
             return flight;
-        } finally
-        {
+        } finally {
             em.close();
         }
     }
+    public List<FlightInstance> getFlightsWithFromDateTickets(String from, Date date, int tickets) {
 
-//    public List<Flight> getFlightsWithFromToDateTickets(String to, String From, Date date, int tickets)
-//    {
-//
-//    }
-//
-//    public Reservation postReservationWithFlightIdPassengers(List<Passenger> passenger, int flightId)
-//    {
-//
-//    }
+        List<FlightInstance> AllFlights = this.getAllFlightInstances();
+        List<FlightInstance> SortedFlights = new ArrayList<>();
+        for (FlightInstance AllFlight : AllFlights) {
+            if(AllFlight.getDateAndTime().after(date)&&AllFlight.getFlight().getfromAirport().getIATACode().equals(from)&&AllFlight.getavailableSeats()>=tickets)
+            {
+                SortedFlights.add(AllFlight);
+            }
+        }
+        return SortedFlights;
+    }
 }
