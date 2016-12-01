@@ -1,5 +1,6 @@
 REST\FlightFacade.class
 RESTException\FlightExceptionMapper.class
+Database\GenericResource.class
 Entity\FlightInstance.class
 Database\SchemaBuilder.class
 RESTException\NotFoundExceptionMapper.class
