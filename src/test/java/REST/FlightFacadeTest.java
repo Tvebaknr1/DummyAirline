@@ -9,13 +9,12 @@ import Entity.Airline;
 import Entity.Airport;
 import Entity.Flight;
 import java.util.List;
-import org.eclipse.persistence.indirection.IndirectList;
 import org.junit.After;
 import org.junit.AfterClass;
+import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *
@@ -45,6 +44,7 @@ public class FlightFacadeTest {
     /**
      * Test of getAllFlights method, of class FlightFacade.
      */
+
     @Test
     public void testGetAllFlights() {
         System.out.println("getAllFlights");
@@ -75,5 +75,5 @@ public class FlightFacadeTest {
         expResult = new Flight("newy001", 200, 5, null, new Airline(1, "TestLine1", null), new Airport("TestCode1", "CET", "Copenhagen Airport", "Denmark", "Copenhagen", null, null), new Airport("TestCode2", "EST", "john f kennedy international airport", "USA", "New York", null, null));
         assertEquals(expResult.toString(), result.get(0).toString());
     }
-    
+
 }

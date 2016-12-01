@@ -12,7 +12,7 @@ import javax.ws.rs.core.Application;
  *
  * @author Emil
  */
-@javax.ws.rs.ApplicationPath("webresources")
+@javax.ws.rs.ApplicationPath("api")
 public class ApplicationConfig extends Application {
 
     @Override
@@ -30,6 +30,9 @@ public class ApplicationConfig extends Application {
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
         resources.add(Database.FlightinfoResource.class);
+        resources.add(RESTException.FlightExceptionMapper.class);
+        resources.add(RESTException.NotFoundExceptionMapper.class);
+        resources.add(RESTException.RuntimeExceptionMapper.class);
     }
     
 }
