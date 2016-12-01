@@ -10,8 +10,14 @@ import Entity.FlightInstance;
 import REST.FlightFacade;
 import RESTException.FlightException;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
 import java.sql.Date;
+import java.text.DateFormat;
+import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.ws.rs.Consumes;
@@ -68,8 +74,17 @@ public class FlightinfoResource
         {
             throw new FlightException();
         }
-        System.out.println("test");
-        return new Gson().toJson(flights);
+        System.out.println("test lol");
+        Gson gson = new GsonBuilder().setDateFormat(DateFormat.FULL, DateFormat.FULL).create();
+        for (FlightInstance flight : flights) {
+            System.out.println(flight.getDateAndTime());
+            System.out.println(gson.toJson(flight,FlightInstance.class));
+        }
+        
+        System.out.println("test more");
+        String temp= gson.toJson(flights);
+        System.out.println("test less");
+        return temp;
     }
     public static void main(String[] args) {
         try {
