@@ -1,6 +1,9 @@
 REST\FlightFacade.class
+RESTException\FlightExceptionMapper.class
 Entity\FlightInstance.class
 Database\SchemaBuilder.class
+RESTException\NotFoundExceptionMapper.class
+RESTException\RuntimeExceptionMapper.class
 Entity\Flight_.class
 Entity\Passenger.class
 Database\FlightinfoResource.class
@@ -10,7 +13,10 @@ Entity\Airport_.class
 Entity\FlightInstance_.class
 Entity\Reservation.class
 Entity\Airline.class
+RESTException\ErrorMessage.class
 Entity\Flight.class
+RESTException\FlightException.class
+Database\MainDatabase.class
 Entity\Passenger_.class
 Database\ApplicationConfig.class
 Entity\Airport.class
