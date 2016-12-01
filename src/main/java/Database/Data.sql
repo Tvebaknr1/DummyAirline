@@ -1,5 +1,12 @@
 USE Airline;
 
+delete * from `Airline.AIRLINE`;
+delete * from `Airline.AIRPORT`;
+delete * from `Airline.FLIGHT`;
+delete * from `Airline.FLIGHTINSTANCE`;
+delete * from `Airline.RESERVATION`;
+delete * from `Airline.PASSENGER`;
+
 insert into `AIRLINE` (`name`) values("TestLine1");
 insert into `AIRLINE` (`name`) values("TestLine2");
 insert into `AIRLINE` (`name`) values("TestLine3");
@@ -11,10 +18,6 @@ insert into `AIRPORT` (`IATACode`,`timeZone`,`name`,`country`,`city`) values("ST
 insert into `AIRPORT` (`IATACode`,`timeZone`,`name`,`country`,`city`) values("CDG", "CET","Parisa Airport","France","Paris");
 insert into `AIRPORT` (`IATACode`,`timeZone`,`name`,`country`,`city`) values("BCN", "CET","Barcelona Airport","spain","Barcelona");
 
-
-
-
-insert into `AIRPORT` (`IATACode`,`timeZone`,`name`,`country`,`city`) values("TestCode3", "UCT","TestPort","TestCountry","TestCity");
 
 insert into `FLIGHT` (`Airline`, `fromAirport`, `tooAirport`, `flightNumber`, `seats`,`flightTimeAirline`) values (1, 1,2,"newy001", 200, 5);
 insert into `FLIGHT` (`Airline`, `fromAirport`, `tooAirport`, `flightNumber`, `seats`,`flightTimeAirline`) values (1, 1,2,"newy031", 200, 5);

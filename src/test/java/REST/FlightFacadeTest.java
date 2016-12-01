@@ -60,5 +60,20 @@ public class FlightFacadeTest {
         expResult = new Flight("newy001", 200, 5, null, new Airline(1, "TestLine1", null), new Airport("TestCode1", "CET", "Copenhagen Airport", "Denmark", "Copenhagen", null, null), new Airport("TestCode2", "EST", "john f kennedy international airport", "USA", "New York", null, null));
         assertEquals(expResult.toString(), result.get(0).toString());
     }
+    @Test
+    public void testGetFlightsWithFromDateTickets()
+    {
+        FlightFacade instance = new FlightFacade();
+        Flight expResult = null; 
+        List<Flight> result = instance.getAllFlights();
+        result.get(0).setFlightInstanceCollection(null);
+        result.get(0).getAirline().setFlightCollection(null);
+        result.get(0).getfromAirport().setFlightCollection(null);
+        result.get(0).getfromAirport().setFlightCollection1(null);
+        result.get(0).gettooAirport().setFlightCollection(null);
+        result.get(0).gettooAirport().setFlightCollection1(null);
+        expResult = new Flight("newy001", 200, 5, null, new Airline(1, "TestLine1", null), new Airport("TestCode1", "CET", "Copenhagen Airport", "Denmark", "Copenhagen", null, null), new Airport("TestCode2", "EST", "john f kennedy international airport", "USA", "New York", null, null));
+        assertEquals(expResult.toString(), result.get(0).toString());
+    }
     
 }
