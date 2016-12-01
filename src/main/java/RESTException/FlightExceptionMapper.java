@@ -19,7 +19,7 @@ import javax.ws.rs.ext.Provider;
  * @author LouiseB
  */
 @Provider
-public class PersonNotFoundExceptionMapper implements ExceptionMapper<PersonNotFoundException>
+public class FlightExceptionMapper implements ExceptionMapper<FlightException>
 {
 
     @Context
@@ -28,12 +28,12 @@ public class PersonNotFoundExceptionMapper implements ExceptionMapper<PersonNotF
     static Gson gson = new GsonBuilder().setPrettyPrinting().create();
     
     @Override
-    public Response toResponse(PersonNotFoundException e)
+    public Response toResponse(FlightException e)
     {
         boolean isDebug = false;//context.getInitParameter("debug").equals("true");
 
         ErrorMessage err = new ErrorMessage(e, 404, isDebug);
-        err.setMessage("Person with requested id not found");
+        err.setMessage("Flight with requested values not found");
         
         return Response.status(404).entity(gson.toJson(err)).type(MediaType.APPLICATION_JSON).build();
     }

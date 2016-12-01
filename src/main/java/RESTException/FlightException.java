@@ -9,16 +9,15 @@ package RESTException;
  *
  * @author LouiseB
  */
-public class CompanyNotFoundException extends Exception
+public class FlightException extends Exception
 {
 
-    public CompanyNotFoundException()
+    public FlightException()
     {
     }
-    
-    public CompanyNotFoundException(String msg)
+
+    public FlightException(String msg)
     {
         super(msg);
     }
-    
 }

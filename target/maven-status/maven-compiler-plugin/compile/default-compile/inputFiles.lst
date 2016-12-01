@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\Emil\Documents\NetBeansProjects\DummyAirline\src\main\java\Entity\Flight.java
 C:\Users\Emil\Documents\NetBeansProjects\DummyAirline\src\main\java\Database\MainDatabase.java
 C:\Users\Emil\Documents\NetBeansProjects\DummyAirline\src\main\java\RESTException\CompanyNotFoundException.java
@@ -16,3 +17,21 @@ C:\Users\Emil\Documents\NetBeansProjects\DummyAirline\src\main\java\Entity\Airli
 C:\Users\Emil\Documents\NetBeansProjects\DummyAirline\src\main\java\Entity\Passenger.java
 C:\Users\Emil\Documents\NetBeansProjects\DummyAirline\src\main\java\RESTException\ErrorMessage.java
 C:\Users\Emil\Documents\NetBeansProjects\DummyAirline\src\main\java\Entity\Airport.java
+=======
+C:\Users\LouiseB\OneDrive\Cphbusiness\3. semester\Module_3\SemesterProjekt\DummyAirline\src\main\java\Entity\Airport.java
+C:\Users\LouiseB\OneDrive\Cphbusiness\3. semester\Module_3\SemesterProjekt\DummyAirline\src\main\java\Entity\Reservation.java
+C:\Users\LouiseB\OneDrive\Cphbusiness\3. semester\Module_3\SemesterProjekt\DummyAirline\src\main\java\Entity\Passenger.java
+C:\Users\LouiseB\OneDrive\Cphbusiness\3. semester\Module_3\SemesterProjekt\DummyAirline\src\main\java\Entity\FlightInstance22.java
+C:\Users\LouiseB\OneDrive\Cphbusiness\3. semester\Module_3\SemesterProjekt\DummyAirline\src\main\java\Entity\Passenger22.java
+C:\Users\LouiseB\OneDrive\Cphbusiness\3. semester\Module_3\SemesterProjekt\DummyAirline\src\main\java\REST\FlightFacade.java
+C:\Users\LouiseB\OneDrive\Cphbusiness\3. semester\Module_3\SemesterProjekt\DummyAirline\src\main\java\Entity\Airline22.java
+C:\Users\LouiseB\OneDrive\Cphbusiness\3. semester\Module_3\SemesterProjekt\DummyAirline\src\main\java\Entity\Reservation22.java
+C:\Users\LouiseB\OneDrive\Cphbusiness\3. semester\Module_3\SemesterProjekt\DummyAirline\src\main\java\Entity\Airport22.java
+C:\Users\LouiseB\OneDrive\Cphbusiness\3. semester\Module_3\SemesterProjekt\DummyAirline\src\main\java\Entity\Flight22.java
+C:\Users\LouiseB\OneDrive\Cphbusiness\3. semester\Module_3\SemesterProjekt\DummyAirline\src\main\java\Database\ApplicationConfig.java
+C:\Users\LouiseB\OneDrive\Cphbusiness\3. semester\Module_3\SemesterProjekt\DummyAirline\src\main\java\Entity\Flight.java
+C:\Users\LouiseB\OneDrive\Cphbusiness\3. semester\Module_3\SemesterProjekt\DummyAirline\src\main\java\Entity\FlightInstance.java
+C:\Users\LouiseB\OneDrive\Cphbusiness\3. semester\Module_3\SemesterProjekt\DummyAirline\src\main\java\Entity\Airline.java
+C:\Users\LouiseB\OneDrive\Cphbusiness\3. semester\Module_3\SemesterProjekt\DummyAirline\src\main\java\Database\FlightinfoResource.java
+C:\Users\LouiseB\OneDrive\Cphbusiness\3. semester\Module_3\SemesterProjekt\DummyAirline\src\main\java\Database\SchemaBuilder.java
+>>>>>>> 66ea7b145eb10d8e222be610621d32cf648a0fa8
