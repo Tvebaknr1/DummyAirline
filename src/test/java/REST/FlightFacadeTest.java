@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -89,5 +90,5 @@ public class FlightFacadeTest
         expResult = new FlightInstance(new Date(2012, 1, 28), 0, 23,fl,col);
         assertEquals(expResult.toString(), result.get(0).toString());
     }
-
 }
+
