@@ -39,6 +39,7 @@ public class FlightinfoResource
     }
 
     @GET
+    @Path("allflights")
     @Produces(MediaType.APPLICATION_JSON)
     public String getAllFlights()
     {
@@ -46,12 +47,24 @@ public class FlightinfoResource
         return new Gson().toJson(flights);
     }
 
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    @Consumes(MediaType.TEXT_PLAIN)
-    public String getFlightsWithFromDateTickets(@PathParam("from")String from, @PathParam("date") Date date, @PathParam("tickets")int tickets)
+     @GET
+    @Path("dick")
+    @Produces(MediaType.APPLICATION_XML)
+    @Consumes(MediaType.APPLICATION_XML)
+    public String getFlightsWitdickhFromDateTickets()
     {
-        List<FlightInstance> flights = flightFacade.getFlightsWithFromDateTickets(from, date, tickets);
-        return new Gson().toJson(flights);
+        return "fuck you";
+//        List<FlightInstance> flights = flightFacade.getFlightsWithFromDateTickets(from, date, tickets);
+//        return new Gson().toJson(flights);
+    }
+    @GET
+    @Path("{from}/{date}/{tickets}")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public String getFlightsWithFromDateTickets(@PathParam("from")String from, @PathParam("date") String date, @PathParam("tickets")int tickets)
+    {
+        return "fuck you";
+//        List<FlightInstance> flights = flightFacade.getFlightsWithFromDateTickets(from, date, tickets);
+//        return new Gson().toJson(flights);
     }
 }
