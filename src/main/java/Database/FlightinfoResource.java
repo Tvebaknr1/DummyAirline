@@ -47,23 +47,7 @@ public class FlightinfoResource
     @Produces(MediaType.APPLICATION_JSON)
     public String getAllFlights() throws RuntimeException, FlightException, NotFoundException
     {
-        List<Flight> flights = flightFacade.getAllFlights();
-        if (flights == null)
-        {
-            throw new FlightException();
-        }
-        return new Gson().toJson(flights);
-    }
-
-     
-    @GET
-    @Path("{from}/{date}/{tickets}")
-    @Produces(MediaType.APPLICATION_JSON)
-    @Consumes(MediaType.TEXT_PLAIN)
-    public String getFlightsWithFromDateTickets(@PathParam("from") String from, @PathParam("date") Date date, @PathParam("tickets") int tickets) throws RuntimeException, FlightException, NotFoundException
-    {
-        System.out.println("test 2");
-        List<FlightInstance> flights = flightFacade.getFlightsWithFromDateTickets(from, date, tickets);
+         List<FlightInstance> flights = flightFacade.getAllFlightInstances();
         if (flights == null || flights.size() == 0)
         {
             throw new FlightException();
@@ -81,7 +65,51 @@ public class FlightinfoResource
             response += "\"flightID\":\"" + fl.getFlight().getFlightID() + "\",";
             response += "\"flightNumber\":\"" + fl.getFlight().getFlightNumber() + "\",";
             
-            response += "\"date\":\""+(1900+date.getYear())+"-"+(date.getMonth() +1)+"-"+date.getDate()+"T00:00:00.000Z\",";
+            response += "\"date\":\""+(1900+fl.getDateAndTime().getYear())+"-"+(fl.getDateAndTime().getMonth() +1)+"-"+fl.getDateAndTime().getDate()+"T00:00:00.000Z\",";
+            response += "\"numberofseats\":\""+fl.getFlight().getSeats()+"\",";
+            response += "\"totalPrice\":\""+(fl.getPrice() * 1) +"\",";
+            response += "\"traveltime\":\""+fl.getFlight().getFlightTimeAirline() +"\",";
+            response += "\"origin\":\""+fl.getFlight().getfromAirport().getIATACode()+"\",";
+            response += "\"destination\":\""+fl.getFlight().gettooAirport().getIATACode()+"\"";
+            
+            response += "}";
+        }
+        response += "]}";
+        System.out.println(response);
+        
+        return response;
+    }
+
+     
+    @GET
+    @Path("{from}/{date}/{tickets}")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.TEXT_PLAIN)
+    public String getFlightsWithFromDateTickets(@PathParam("from") String from, @PathParam("date") String date, @PathParam("tickets") int tickets) throws RuntimeException, FlightException, NotFoundException
+    {
+        String[] strArr = date.split("T");
+        strArr = strArr[0].split("-");
+        Date dateDate = new Date ((Integer.parseInt(strArr[0])-1900),(Integer.parseInt(strArr[1])-1),Integer.parseInt(strArr[2]));
+        System.out.println(date.toString()); 
+         List<FlightInstance> flights = flightFacade.getFlightsWithFromDateTickets(from, dateDate, tickets);
+        if (flights == null || flights.size() == 0)
+        {
+            throw new FlightException();
+        }
+        System.out.println("test");
+        String response = "{";
+        response += "\"airline\":\"" + flights.get(0).getFlight().getAirline().getName() +"\",\"flights\": [";
+        for (FlightInstance fl : flights)
+        {
+            if(fl != flights.get(0))
+            {
+                response += ",";
+            }
+            response += "{";
+            response += "\"flightID\":\"" + fl.getFlight().getFlightID() + "\",";
+            response += "\"flightNumber\":\"" + fl.getFlight().getFlightNumber() + "\",";
+            
+            response += "\"date\":\""+(1900+dateDate.getYear())+"-"+(dateDate.getMonth() +1)+"-"+dateDate.getDate()+"T00:00:00.000Z\",";
             response += "\"numberofseats\":\""+fl.getFlight().getSeats()+"\",";
             response += "\"totalPrice\":\""+(fl.getPrice() * tickets) +"\",";
             response += "\"traveltime\":\""+fl.getFlight().getFlightTimeAirline() +"\",";
@@ -93,11 +121,11 @@ public class FlightinfoResource
         response += "]}";
         System.out.println(response);
         
-        return new Gson().toJson(flights);
+        return response;
     }
     public static void main(String[] args) {
         try {
-            System.out.println(new FlightinfoResource().getFlightsWithFromDateTickets("CPH", new Date(2012-1900, 1-1,28), 1));
+            System.out.println(new FlightinfoResource().getFlightsWithFromDateTickets("CPH", "2017-01-08T00:00:00.000Z", 1));
         } catch (RuntimeException ex) {
             Logger.getLogger(FlightinfoResource.class.getName()).log(Level.SEVERE, null, ex);
         } catch (FlightException ex) {
