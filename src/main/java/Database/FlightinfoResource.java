@@ -5,18 +5,14 @@
  */
 package Database;
 
-import Entity.Flight;
 import Entity.FlightInstance;
 import REST.FlightFacade;
-import RESTException.FlightException;
-import com.google.gson.Gson;
 import java.sql.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
-import javax.ws.rs.NotFoundException;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -42,33 +38,28 @@ public class FlightinfoResource
     {
     }
 
-    @GET
-    @Path("allflights")
-    @Produces(MediaType.APPLICATION_JSON)
-    public String getAllFlights() throws RuntimeException, FlightException, NotFoundException
-    {
-        List<Flight> flights = flightFacade.getAllFlights();
-        if (flights == null)
-        {
-            throw new FlightException();
-        }
-        return new Gson().toJson(flights);
-    }
+//    @GET
+//    @Path("allflights")
+//    @Produces(MediaType.APPLICATION_JSON)
+//    public String getAllFlights() throws RuntimeException, FlightException, NotFoundException
+//    {
+//        List<Flight> flights = flightFacade.getAllFlights();
+//        if (flights == null)
+//        {
+//            throw new FlightException();
+//        }
+//        return new Gson().toJson(flights);
+//    }
 
      
     @GET
     @Path("{from}/{date}/{tickets}")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.TEXT_PLAIN)
-    public String getFlightsWithFromDateTickets(@PathParam("from") String from, @PathParam("date") Date date, @PathParam("tickets") int tickets) throws RuntimeException, FlightException, NotFoundException
+    public String getFlightsWithFromDateTickets(@PathParam("from") String from, @PathParam("date") Date date, @PathParam("tickets") int tickets)
     {
         System.out.println("test 2");
         List<FlightInstance> flights = flightFacade.getFlightsWithFromDateTickets(from, date, tickets);
-        if (flights == null || flights.size() == 0)
-        {
-            throw new FlightException();
-        }
-        System.out.println("test");
         String response = "{";
         response += "\"airline\":\"" + flights.get(0).getFlight().getAirline().getName() +"\",\"flights\": [";
         for (FlightInstance fl : flights)
@@ -93,15 +84,13 @@ public class FlightinfoResource
         response += "]}";
         System.out.println(response);
         
-        return new Gson().toJson(flights);
+        return response;
     }
     public static void main(String[] args) {
         try {
             System.out.println(new FlightinfoResource().getFlightsWithFromDateTickets("CPH", new Date(2012-1900, 1-1,28), 1));
         } catch (RuntimeException ex) {
             Logger.getLogger(FlightinfoResource.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (FlightException ex) {
-            Logger.getLogger(FlightinfoResource.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        } 
     }
 }
