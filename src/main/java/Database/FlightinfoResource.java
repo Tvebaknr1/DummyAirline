@@ -64,16 +64,40 @@ public class FlightinfoResource
     {
         System.out.println("test 2");
         List<FlightInstance> flights = flightFacade.getFlightsWithFromDateTickets(from, date, tickets);
-        if (flights == null)
+        if (flights == null || flights.size() == 0)
         {
             throw new FlightException();
         }
         System.out.println("test");
+        String response = "{";
+        response += "\"airline\":\"" + flights.get(0).getFlight().getAirline().getName() +"\",\"flights\": [";
+        for (FlightInstance fl : flights)
+        {
+            if(fl != flights.get(0))
+            {
+                response += ",";
+            }
+            response += "{";
+            response += "\"flightID\":\"" + fl.getFlight().getFlightID() + "\",";
+            response += "\"flightNumber\":\"" + fl.getFlight().getFlightNumber() + "\",";
+            
+            response += "\"date\":\""+(1900+date.getYear())+"-"+(date.getMonth() +1)+"-"+date.getDate()+"T00:00:00.000Z\",";
+            response += "\"numberofseats\":\""+fl.getFlight().getSeats()+"\",";
+            response += "\"totalPrice\":\""+(fl.getPrice() * tickets) +"\",";
+            response += "\"traveltime\":\""+fl.getFlight().getFlightTimeAirline() +"\",";
+            response += "\"origin\":\""+fl.getFlight().getfromAirport().getIATACode()+"\",";
+            response += "\"destination\":\""+fl.getFlight().gettooAirport().getIATACode()+"\"";
+            
+            response += "}";
+        }
+        response += "]}";
+        System.out.println(response);
+        
         return new Gson().toJson(flights);
     }
     public static void main(String[] args) {
         try {
-            System.out.println(new FlightinfoResource().getFlightsWithFromDateTickets("CPH", new Date(0), 1));
+            System.out.println(new FlightinfoResource().getFlightsWithFromDateTickets("CPH", new Date(2012-1900, 1-1,28), 1));
         } catch (RuntimeException ex) {
             Logger.getLogger(FlightinfoResource.class.getName()).log(Level.SEVERE, null, ex);
         } catch (FlightException ex) {

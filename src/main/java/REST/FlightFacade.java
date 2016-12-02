@@ -63,10 +63,12 @@ public class FlightFacade {
     }
     public List<FlightInstance> getFlightsWithFromDateTickets(String from, Date date, int tickets) {
         System.out.println("test 3");
+      
         List<FlightInstance> AllFlights = this.getAllFlightInstances();
         List<FlightInstance> SortedFlights = new ArrayList<>();
         for (FlightInstance AllFlight : AllFlights) {
-            if(AllFlight.getDateAndTime().after(date)&&AllFlight.getFlight().getfromAirport().getIATACode().equals(from)&&AllFlight.getavailableSeats()>=tickets)
+            AllFlight.getDateAndTime().setHours(0);
+            if(AllFlight.getDateAndTime().equals(date)&&AllFlight.getFlight().getfromAirport().getIATACode().equals(from)&&AllFlight.getavailableSeats()>=tickets)
             {
                 System.out.println("test 5");
                 SortedFlights.add(AllFlight);
