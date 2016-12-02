@@ -30,7 +30,6 @@ public class ApplicationConfig extends Application {
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
         resources.add(Database.FlightinfoResource.class);
-        resources.add(Database.GenericResource.class);
         resources.add(RESTException.FlightExceptionMapper.class);
         resources.add(RESTException.NotFoundExceptionMapper.class);
         resources.add(RESTException.RuntimeExceptionMapper.class);
