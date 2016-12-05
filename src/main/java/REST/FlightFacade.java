@@ -72,7 +72,7 @@ public class FlightFacade {
            
                 SortedFlights.add(AllFlight);
             }
-        }
+        } System.out.println(date + "hej");
         return SortedFlights;
     }
     public List<FlightInstance> getFlightsWithFromTooDateTickets(String from, String too, Date date, int tickets) {
